@@ -1,0 +1,140 @@
+/* =========================
+   Tema colores monografia
+========================= */
+:root{
+  --neon: #7c4dff;
+  --neon2:#00e5ff;
+  --bg1:#070815;
+  --bg2:#0b1a3a;
+}
+
+body{
+  background: radial-gradient(1200px 600px at 20% 10%, rgba(124,77,255,.25), transparent 55%),
+              radial-gradient(900px 500px at 70% 30%, rgba(0,229,255,.18), transparent 55%),
+              linear-gradient(180deg, var(--bg1), var(--bg2));
+  color: #e9e9ff;
+}
+
+.hero{
+  background: linear-gradient(180deg, rgba(0,0,0,.0), rgba(0,0,0,.35));
+              
+  background-size: cover;
+  background-position: center;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+}
+
+/* =========================================================
+   COMPONENTE BOOTSTRAP #1: NAVBAR (.navbar)
+   Bootstrap trae la barra funcional (colapsable, sticky-top);
+   aquí se personaliza con fondo translúcido oscuro + blur
+   para que combine con el tema "neón espacial".
+========================================================= */
+.navbar{
+  background: rgba(10,10,25,.75) !important;
+  backdrop-filter: blur(10px);
+}
+
+/* =========================================================
+   COMPONENTE BOOTSTRAP #2: BUTTONS (.btn)
+   Se personalizan las clases .btn-neon y .btn-glow (aplicadas
+   sobre el .btn base de Bootstrap) con degradado morado/cian
+   y efecto glow al hacer hover.
+========================================================= */
+.btn-neon, .btn-glow{
+  border: 1px solid rgba(124,77,255,.55) !important;
+  background: linear-gradient(90deg, rgba(124,77,255,.95), rgba(0,229,255,.85)) !important;
+  color: #081017 !important;
+  font-weight: 800;
+  box-shadow: 0 0 25px rgba(124,77,255,.35);
+}
+
+.btn-neon:hover, .btn-glow:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 0 35px rgba(0,229,255,.35);
+}
+
+/* ================================================
+   COMPONENTE BOOTSTRAP #3: BADGES (.badge)
+   Se personaliza el componente Badge de Bootstrap con forma
+   de píldora translúcida y variantes de color por categoría.
+   Úsalo en el HTML como: <span class="badge badge-neon">Texto</span>
+   o con variante: <span class="badge badge-neon tag-blue">Texto</span>
+========================================================= */
+.badge-neon{
+  display:inline-block;
+  padding: .45rem .8rem;
+  border-radius: 999px;
+  background: rgba(124,77,255,.18);
+  border: 1px solid rgba(124,77,255,.45);
+  color: #e9e3ff;
+  font-weight: 700;
+  font-size: .8rem;
+}
+.badge-neon.tag-blue{ background: rgba(0,229,255,.15); border-color: rgba(0,229,255,.45); }
+.badge-neon.tag-green{ background: rgba(46,255,155,.15); border-color: rgba(46,255,155,.45); }
+.badge-neon.tag-purple{ background: rgba(147,85,255,.18); border-color: rgba(147,85,255,.5); }
+.badge-neon.tag-red{ background: rgba(255,80,80,.15); border-color: rgba(255,80,80,.5); }
+
+/* =========================================================
+   Tags heredados (mismo estilo visual que badge-neon, se
+   mantienen por compatibilidad con el HTML actual)
+========================================================= */
+.tag{
+  display:inline-block;
+  padding: .35rem .7rem;
+  border-radius: 999px;
+  background: rgba(124,77,255,.18);
+  border: 1px solid rgba(124,77,255,.45);
+  color: #e9e3ff;
+  font-weight: 700;
+  font-size: .85rem;
+}
+.tag-blue{ background: rgba(0,229,255,.15); border-color: rgba(0,229,255,.45); }
+.tag-green{ background: rgba(46,255,155,.15); border-color: rgba(46,255,155,.45); }
+.tag-purple{ background: rgba(147,85,255,.18); border-color: rgba(147,85,255,.5); }
+.tag-red{ background: rgba(255,80,80,.15); border-color: rgba(255,80,80,.5); }
+
+/* ===================
+   COMPONENTE BOOTSTRAP #4: CARDS (.card)
+   Se personaliza el componente Card de Bootstrap: fondo vidrio
+   translúcido, borde sutil, sombra y efecto hover con elevación.
+   También se fuerza altura uniforme de imagen (.exo-img) para
+   que todas las tarjetas del grid queden alineadas.
+===================== */
+.planet-card{
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,.15);
+}
+.planet-card:hover{
+  transform: translateY(-4px);
+  border-color: rgba(0,229,255,.35);
+  box-shadow: 0 20px 45px rgba(0,229,255,.10);
+}
+
+/* =========================
+   COMPONENTE BOOTSTRAP #5: MODAL (.modal)
+   Se personaliza el componente Modal de Bootstrap: fondo oscuro
+   translúcido, borde cian tenue y sombra con efecto glow.
+================ */
+.modal-glow{
+  background: rgba(10,10,25,.70);
+  border: 1px solid rgba(0,229,255,.20);
+  box-shadow: 0 0 35px rgba(0,229,255,.12);
+  color: #f2f2ff;
+}
+
+.footer{
+  border-top: 1px solid rgba(255,255,255,.08);
+  background: rgba(0,0,0,.15);
+}
+
+
+.exo-img {
+  height: 250px;       /* la misma altura para todas */
+  object-fit: cover;   /* recorta la imagen sin deformarla */
+  width: 100%;
+}
